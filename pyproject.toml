@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-kv-paged-allocator"
+version = "0.1.0"
+description = "PagedAttention-style block-table KV-cache memory manager with prefix-hash radix sharing, Copy-on-Write beam/speculative forks, and LRU watermark eviction."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Abdullah Azmi", email = "m4u5t4@u.northwestern.edu" }
+]
+keywords = ["llm", "inference", "kv-cache", "paged-attention", "radix-cache", "copy-on-write", "systems"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Memory Management",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.urls]
+Homepage = "https://abdullahazmi.com"
+Repository = "https://github.com/aazminu/llm-kv-paged-allocator"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
