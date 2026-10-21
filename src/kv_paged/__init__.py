@@ -27,3 +27,6 @@ __all__ = [
 ]
 
 __version__ = "0.1.0"
+
+from .diagnostics import run_diagnostic_suite, validate_runtime_invariants
+__all__ = list(__all__) + ["run_diagnostic_suite", "validate_runtime_invariants"]
